@@ -20,6 +20,8 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
 
     <ImageView
@@ -36,8 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="28dp"
         android:text="ابــدأ"
+        android:textColor="#FFFFFF"
         android:textSize="35sp"
         android:visibility="visible" />
 
@@ -50,4 +53,16 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         app:srcCompat="@drawable/setting_btn" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/motawef_schedule" />
+
 </RelativeLayout>
