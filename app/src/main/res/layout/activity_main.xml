@@ -40,4 +40,14 @@
         android:text="ابــدأ"
         android:textSize="35sp"
         android:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/setting_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/setting_btn" />
 </RelativeLayout>
