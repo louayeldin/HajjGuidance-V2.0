@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -24,7 +25,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
-    ImageButton set_btn;
+    ImageView set_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +39,17 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        set_btn = (ImageButton) findViewById(R.id.setting_btn);
+        set_btn = (ImageView) findViewById(R.id.setting_btn);
         set_btn.setOnClickListener(this);
 
-
     }
+
+
 
     /*a function that mark specific place in saudi arabia which is makkah - added 2/8/2018 */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         // Add a marker in Makkah, Saudi Arabia,
         // and move the map's camera to the same location.
         // Customizing the map style to be look different from the Default layout of Google Map
@@ -62,23 +66,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             Log.e("MainActivity", "Can't find style. Error: ", e);
         }
 
-        LatLng makkah = new LatLng(	21.427, 39.826);
-        googleMap.addMarker(new MarkerOptions().position(makkah)
+        LatLng location = new LatLng(	21.427, 39.826);
+        googleMap.addMarker(new MarkerOptions().position(location)
                 .title("مكة المكرمة"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(makkah));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location,15));
+        // Zoom in, animating the camera.
+        googleMap.animateCamera(CameraUpdateFactory.zoomIn());
+        // Zoom out to zoom level 10, animating with a duration of 2 seconds.
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
     }
 
-    /*a function that takes the users automatically zoom to the marked place which is Makkah - added 2/8/2018 */
-    GoogleMap mGoogleMap;
-    private void pointToPosition(LatLng position) {
 
-        //Build camera position
-        CameraPosition cameraPosition = new CameraPosition.Builder()
-                .target(position)
-                .zoom(17).build();
-        //Zoom in and animate the camera.
-        mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-    }
 
     @Override
     public void onClick(View view) {
