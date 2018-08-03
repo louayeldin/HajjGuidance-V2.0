@@ -25,8 +25,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener {
 
-    ImageView set_btn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +36,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-        set_btn = (ImageView) findViewById(R.id.setting_btn);
-        set_btn.setOnClickListener(this);
 
     }
 

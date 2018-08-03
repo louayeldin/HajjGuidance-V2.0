@@ -23,7 +23,7 @@ public class HajjSigninActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(HajjSigninActivity.this,MainActivity.class);
+        Intent intent = new Intent(HajjSigninActivity.this,QrReaderActivity.class);
         startActivity(intent);
         finish();
     }

@@ -42,7 +42,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignInOptions"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -68,8 +68,11 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".SettingScreen"
-                  android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SettingScreen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".QrReaderActivity"
+                  android:theme="@style/AppTheme.NoActionBar" ></activity>
     </application>
 
 </manifest>
